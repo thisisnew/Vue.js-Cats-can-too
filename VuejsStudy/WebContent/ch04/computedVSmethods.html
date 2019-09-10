@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id='app'>
+	<ol>
+		<li>
+			{{computedData}}
+		</li>
+		<li>
+			{{computedData}}
+		</li>
+	</ol>
+	
+	<ol>
+		<li>
+			{{methodsData()}}
+		</li>
+		<li>
+			{{methodsData()}}
+		</li>
+	</ol>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+	new Vue({
+		el : '#app',
+		computed : {
+			computedData : function(){
+				return Math.random()
+			}
+		},
+		methods: {
+			methodsData : function(){
+				return Math.random()
+			}
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id='app'>
+	{{value | round | radian}}
+</div>
+
+<script>
+	new Vue({
+		el: '#app',
+		data:{
+			value:180
+		},
+		filters:{
+			round: function(val){
+				return Math.round(val*100)/100
+			},
+			radian: function(val){
+				return val*Math.PI/180
+			}
+		}
+	})
+</script>
+</body>
+</html>
