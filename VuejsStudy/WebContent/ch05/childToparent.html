@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id='app'>
+		<comp-child v-on:childs-event='parentMethod'></comp-child>
+	</div>
+<script>
+	Vue.component('comp-child',{
+		template : '<button v-on:click="handleClick">이벤트 호출하기</button>',
+		methods : {
+			handleClick : function(){
+				alert('handleClick 호출')
+				this.$emit('childs-event')
+			}
+		}
+
+	})
+	
+	new Vue({
+		 el:'#app',
+		 methods : {
+			 parentMethod:function(){
+				 alert('이벤트를 받았습니다.')
+			 }
+		 }
+		
+	})
+</script>
+</body>
+</html>

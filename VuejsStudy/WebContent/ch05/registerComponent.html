@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="app">
+		<my-compo></my-compo>
+	</div>
+<script>
+/* new Vue() 하기 전에 컴포넌트 먼저 정의 */
+	Vue.component('my-compo',{
+		template : '<p>컴포넌트 등록</p>'
+	})
+	
+	new Vue({
+	 	el : '#app'
+	})
+</script>
+</body>
+</html>
